@@ -202,6 +202,27 @@
             </a>                    
           </li>
 
+          <li class="nav-item mt-auto">
+            <a href="{{ route('tag.index') }}" class="nav-link {{ (request()->is('admin/category*')) ? 'active': '' }}">
+              <i class="nav-icon fas fa-tag"></i>
+              <p>
+                Tag
+              </p>
+            </a>                    
+          </li>
+
+
+          <li class="nav-item mt-auto">
+            <a href="{{ route('post.index') }}" class="nav-link {{ (request()->is('admin/category*')) ? 'active': '' }}">
+              <i class="nav-icon fas fa-tag"></i>
+              <p>
+                Post
+              </p>
+            </a>                    
+          </li>
+
+
+
 
 
 
@@ -270,12 +291,19 @@
   <script src="{{asset ('admin') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="{{asset ('admin') }}//js/adminlte.min.js"></script>
+  <script src="{{asset ('admin') }}//js/bs-custom-file-input.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  
 
   <script>
     @if(Session::has('success'))
     toastr.success("{{ Session::get('success')}}")
     @endif
+  </script>
+  <script>
+    $(document).ready(function () {
+  bsCustomFileInput.init()
+})
   </script>
 
 </body>
